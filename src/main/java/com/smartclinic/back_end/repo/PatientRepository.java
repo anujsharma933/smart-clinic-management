@@ -1,11 +1,13 @@
 package com.smartclinic.repository;
 
+import com.smartclinic.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.Optional;
 
-public interface PatientRepository extends JpaRepository<Object, Long> {
+public interface PatientRepository extends JpaRepository<Patient, Long> {
 
-    Optional<Object> findByEmail(String email);
+    Optional<Patient> findByEmail(String email);
 
-    Optional<Object> findByEmailOrPhone(String email, String phone);
+    Optional<Patient> findByEmailOrPhone(String email, String phone);
 }
